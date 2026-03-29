@@ -1,0 +1,5 @@
+{
+  "name": "AutoMentor AI",
+  "description": "The Ethereal Mentor - Personalized learning artifacts and AI-driven study insights.",
+  "requestFramePermissions": ["camera", "microphone"]
+}

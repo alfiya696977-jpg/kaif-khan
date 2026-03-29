@@ -1,0 +1,128 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+@theme {
+  --font-headline: "Manrope", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-label: "Inter", sans-serif;
+
+  --color-on-secondary-container: #e4c4ff;
+  --color-inverse-on-surface: #4d556b;
+  --color-on-tertiary-fixed-variant: #005561;
+  --color-error-dim: #d73357;
+  --color-on-error-container: #ffb2b9;
+  --color-on-primary-fixed: #000000;
+  --color-surface-variant: #192540;
+  --color-secondary-fixed: #e4c6ff;
+  --color-surface-container-high: #141f38;
+  --color-primary: #9fa7ff;
+  --color-on-secondary-fixed: #4e0487;
+  --color-secondary-container: #62259b;
+  --color-tertiary-dim: #1ad0eb;
+  --color-error-container: #a70138;
+  --color-on-secondary-fixed-variant: #6c31a5;
+  --color-outline-variant: #40485d;
+  --color-surface-container-highest: #192540;
+  --color-on-surface-variant: #a3aac4;
+  --color-on-secondary: #32005b;
+  --color-inverse-surface: #faf8ff;
+  --color-secondary-fixed-dim: #dbb4ff;
+  --color-surface-tint: #9fa7ff;
+  --color-secondary: #be83fa;
+  --color-tertiary-fixed: #3adffa;
+  --color-surface-bright: #1f2b49;
+  --color-on-primary: #101b8b;
+  --color-surface: #060e20;
+  --color-on-tertiary: #005561;
+  --color-on-error: #490013;
+  --color-outline: #6d758c;
+  --color-primary-dim: #8a95ff;
+  --color-inverse-primary: #4954bc;
+  --color-tertiary: #7de9ff;
+  --color-tertiary-container: #3adffa;
+  --color-surface-container: #0f1930;
+  --color-background: #060e20;
+  --color-primary-fixed: #8d98ff;
+  --color-on-surface: #dee5ff;
+  --color-on-tertiary-fixed: #00363e;
+  --color-secondary-dim: #be83fa;
+  --color-surface-container-low: #091328;
+  --color-primary-container: #8d98ff;
+  --color-surface-container-lowest: #000000;
+  --color-on-tertiary-container: #004b56;
+  --color-primary-fixed-dim: #7f8af6;
+  --on-primary-fixed-variant: #0c1889;
+  --color-on-background: #dee5ff;
+  --color-error: #ff6e84;
+  --color-on-primary-container: #000a7b;
+  --color-tertiary-fixed-dim: #1ad0eb;
+  --color-surface-dim: #060e20;
+  
+  --stitch-line: rgba(159, 167, 255, 0.15);
+  --stitch-line-active: rgba(159, 167, 255, 0.4);
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-background font-body antialiased;
+  }
+}
+
+@layer components {
+  .stitched-border {
+    @apply border border-outline-variant/20 relative;
+  }
+  
+  .stitched-border::before,
+  .stitched-border::after {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    background: var(--stitch-line);
+  }
+
+  .stitched-x::before {
+    top: -1px;
+    bottom: -1px;
+    left: 12px;
+    width: 1px;
+  }
+  
+  .stitched-x::after {
+    top: -1px;
+    bottom: -1px;
+    right: 12px;
+    width: 1px;
+  }
+
+  .stitched-y::before {
+    left: -1px;
+    right: -1px;
+    top: 12px;
+    height: 1px;
+  }
+  
+  .stitched-y::after {
+    left: -1px;
+    right: -1px;
+    bottom: 12px;
+    height: 1px;
+  }
+
+  .glass-card {
+    background: rgba(25, 37, 64, 0.4);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    @apply border border-outline-variant/15;
+  }
+  .hyper-gradient-btn {
+    background: linear-gradient(135deg, #9fa7ff 0%, #be83fa 100%);
+  }
+  .mentor-pulse {
+    box-shadow: 0 0 15px rgba(125, 233, 255, 0.4);
+  }
+  .active-nav-glow {
+    box-shadow: 0 0 15px rgba(159, 167, 255, 0.1);
+  }
+}
+
